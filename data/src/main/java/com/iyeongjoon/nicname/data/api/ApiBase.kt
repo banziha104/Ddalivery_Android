@@ -5,9 +5,9 @@ import com.iyeongjoon.nicname.data.modules.NetworkModule
 import retrofit2.Retrofit
 
 open class ApiBase{
-    final val networkModule = NetworkModule()
+    val networkModule = NetworkModule()
 
-    fun <T> makeModel(api : Class<T>) =
+    fun <T> createApi(api : Class<T>) =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(networkModule.provideOkHttpClient())
