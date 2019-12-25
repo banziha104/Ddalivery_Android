@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery
+package com.iyeongjoon.nicname.riderapp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
