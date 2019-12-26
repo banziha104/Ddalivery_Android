@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Ddalivery</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+
+
+<!--   Auth-->
+
+    <string name="sign_in_id_hint">아이디</string>
+    <string name="sign_in_password_hint">패스워드</string>
 </resources>

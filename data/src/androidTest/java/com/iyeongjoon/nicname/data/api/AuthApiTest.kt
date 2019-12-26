@@ -1,6 +1,6 @@
 package com.iyeongjoon.nicname.data.api
 
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.iyeongjoon.nicname.data.api.auth.AuthApi
 import com.iyeongjoon.nicname.data.form.auth.LoginForm
 import com.iyeongjoon.nicname.data.form.auth.SignUpForm

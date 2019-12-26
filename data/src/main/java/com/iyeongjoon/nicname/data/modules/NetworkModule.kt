@@ -17,7 +17,8 @@ class NetworkModule{
 
     // gson 파서팩토리
     fun provideConverterFactory(): Converter.Factory // GsonFactory
-            = GsonConverterFactory.create()
+            = GsonConverterFactory
+        .create()
 
     // okhttp 팩토리
     fun provideOkHttpClient() : OkHttpClient

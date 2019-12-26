@@ -1,7 +1,7 @@
 package com.iyeongjoon.nicname.ddalivery.ex
 
-import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LifecycleObserver
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
 
 // 옵저버를 라이프사이클에 등록하는 익스텐션
 operator fun Lifecycle.plusAssign(observer: LifecycleObserver)
