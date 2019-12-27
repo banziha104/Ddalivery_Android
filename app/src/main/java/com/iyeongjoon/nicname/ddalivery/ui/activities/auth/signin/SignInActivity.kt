@@ -54,10 +54,10 @@ class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
         /***
          * 로그인 버튼 클릭
          */
-        disposable += signInBtnConfirm
+        viewDisposables += signInBtnConfirm
             .clicks()
             .subscribe({
-                disposable += viewModel
+                viewDisposables += viewModel
                     .authApi
                     .auth()
                     .login(
@@ -82,7 +82,7 @@ class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
          * 회원가입 버튼 클릭
          */
 
-        disposable += signInBtnSignUp
+        viewDisposables += signInBtnSignUp
             .clicks()
             .subscribe({
                 moveToSignUpActivity()
@@ -108,7 +108,7 @@ class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
         views
             .forEach {
                 it.apply {
-                    disposable += focusChanges()
+                    viewDisposables += focusChanges()
                         .subscribe {
                             background = if (it) getDrawable(R.drawable.edit_text_background_onfocus) else getDrawable(R.drawable.edit_text_background)
                         }

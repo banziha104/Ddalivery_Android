@@ -7,95 +7,187 @@
         tools:context=".ui.activities.auth.signup.SignUpActivity">
 
     <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:id="@+id/signUpEditId"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="191dp" />
+
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-            android:id="@+id/editText5"
-            android:layout_width="wrap_content"
+            android:id="@+id/signUpEditPhone"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="536dp" />
+            android:background="@drawable/edit_text_background"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-            android:id="@+id/editText3"
-            android:layout_width="wrap_content"
+            android:id="@+id/signUpEditPsCofirm"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:background="@drawable/edit_text_background"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+            android:id="@+id/signUpEditName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="368dp" />
-
-    <EditText
-            android:id="@+id/editText4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="455dp" />
-
-    <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background_onfocus"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="280dp" />
+            android:background="@drawable/edit_text_background"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:id="@+id/signUpTxtAddress"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="아이디"
-            app:layout_constraintBottom_toTopOf="@+id/editText"
-            app:layout_constraintStart_toStartOf="@+id/editText" />
-
-    <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="패스워드"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
-            app:layout_constraintStart_toStartOf="@+id/editText2" />
-
-    <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="패스워드 확인"
-            app:layout_constraintBottom_toTopOf="@+id/editText3"
-            app:layout_constraintStart_toStartOf="@+id/editText3" />
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:background="@drawable/edit_text_background"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이름"
-            app:layout_constraintBottom_toTopOf="@+id/editText4"
-            app:layout_constraintStart_toStartOf="@+id/editText4" />
+
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditName"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditName" />
+
+    <EditText
+            android:id="@+id/signUpEditPs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:ems="10"
+            android:background="@drawable/edit_text_background"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditId"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditId" />
+
+    <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="패스워드"
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditPs"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditPs" />
+
+    <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="패스워드 확인"
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditPsCofirm"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditPsCofirm" />
 
     <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="휴대폰번호"
-            app:layout_constraintBottom_toTopOf="@+id/editText5"
-            app:layout_constraintStart_toStartOf="@+id/editText5" />
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditPhone"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditPhone" />
+
+    <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.91" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/signUpTxtAddress"
+            app:layout_constraintStart_toStartOf="@+id/signUpTxtAddress" />
+
+
+    <Button
+            android:id="@+id/signBtnFindAddress"
+            android:layout_width="71dp"
+            android:layout_height="50dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="@+id/signUpTxtAddress"
+            app:layout_constraintEnd_toEndOf="@+id/signUpEditName"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="@+id/signUpTxtAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
