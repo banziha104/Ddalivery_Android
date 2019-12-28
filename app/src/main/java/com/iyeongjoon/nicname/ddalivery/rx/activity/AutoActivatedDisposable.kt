@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery.rx
+package com.iyeongjoon.nicname.ddalivery.rx.activity
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

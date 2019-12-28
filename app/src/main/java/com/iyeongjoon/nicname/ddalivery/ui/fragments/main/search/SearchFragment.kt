@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery.di.ui.fragments.main.search
+package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.search
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,12 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.iyeongjoon.nicname.ddalivery.R
+import dagger.android.support.DaggerFragment
 
-class SearchFragment : Fragment() {
+class SearchFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = SearchFragment()
-    }
 
     private lateinit var viewModel: SearchViewModel
 

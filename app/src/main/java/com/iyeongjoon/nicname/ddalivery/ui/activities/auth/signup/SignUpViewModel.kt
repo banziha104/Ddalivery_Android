@@ -30,7 +30,6 @@ class SignUpViewModel(val authApi: AuthApi) : ViewModel(),AnkoLogger{
             Pair(R.id.signUpEditName,arrayOf(MinLengthRule(2),NonEmptyRule())),
             Pair(R.id.signUpEditPhone, arrayOf(MinLengthRule(8), MaxLengthRule(20), NonEmptyRule(),OnlyNumbersRule())),
             Pair(R.id.signUpEditAdressDetail,arrayOf(MinLengthRule(2), MaxLengthRule(20), NonEmptyRule()))
-
         )
 
     var submitCheck = BehaviorSubject.createDefault<MutableMap<Int,Boolean>>(

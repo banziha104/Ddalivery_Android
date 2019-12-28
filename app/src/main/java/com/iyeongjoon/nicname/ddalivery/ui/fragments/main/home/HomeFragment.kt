@@ -1,33 +1,29 @@
-package com.iyeongjoon.nicname.ddalivery.di.ui.fragments.main.user
+package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.home
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import com.iyeongjoon.nicname.ddalivery.R
+import dagger.android.support.DaggerFragment
 
-class UserFragment : Fragment() {
+class HomeFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = UserFragment()
-    }
 
-    private lateinit var viewModel: UserViewModel
+    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_user, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        // TODO: Use the ViewModel
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
     }
 
 }

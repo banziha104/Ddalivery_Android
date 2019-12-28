@@ -7,10 +7,10 @@ import android.widget.EditText
 import androidx.lifecycle.ViewModelProviders
 import com.iyeongjoon.nicname.data.form.auth.SignUpForm
 import com.iyeongjoon.nicname.ddalivery.R
-import com.iyeongjoon.nicname.ddalivery.di.ui.dialogs.FindAddressDialog
+import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
 import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
 import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
-import com.iyeongjoon.nicname.ddalivery.rx.AutoClearedDisposable
+import com.iyeongjoon.nicname.ddalivery.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.view.focusChanges
@@ -18,15 +18,11 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import com.wajahatkarim3.easyvalidation.core.rules.*
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import dagger.android.support.DaggerAppCompatActivity
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import java.util.*
 import javax.inject.Inject
 
 class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
@@ -34,8 +30,13 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
     @Inject
     lateinit var viewModelFactory: SignUpViewModelFactory
     lateinit var viewModel: SignUpViewModel
-    val disposable = AutoClearedDisposable(this)
-    val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)
+    val disposable =
+        AutoClearedDisposable(this)
+    val viewDisposables =
+        AutoClearedDisposable(
+            lifecycleOwner = this,
+            alwaysClearOnStop = false
+        )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +62,11 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
         viewDisposables +=
             signUpBtnFindAddress.clicks()
                 .subscribe({
-                    val dialog = FindAddressDialog(this, ::setAddress)
+                    val dialog =
+                        FindAddressDialog(
+                            this,
+                            ::setAddress
+                        )
                     dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                     dialog.show()
                 }, {

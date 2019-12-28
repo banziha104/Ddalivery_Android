@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery.di.ui.fragments.main.category
+package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.category
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,12 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.iyeongjoon.nicname.ddalivery.R
+import dagger.android.support.DaggerFragment
 
-class CategoryFragment : Fragment() {
+class CategoryFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = CategoryFragment()
-    }
 
     private lateinit var viewModel: CategoryViewModel
 
@@ -27,7 +25,6 @@ class CategoryFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }
