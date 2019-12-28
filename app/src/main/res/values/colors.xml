@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="boader_org">#BBBBBB</color>
-    <color name="boader_click">#000000</color>
+    <color name="border_org">#BBBBBB</color>
+    <color name="border_click">#000000</color>
+    <color name="border_success">#35ba37</color>
+    <color name="border_fail">#d04949</color>
+
 
     <color name="whiteGray">#EEEEEE</color>
     <color name="recyclerViewBack">#ecedf2</color>

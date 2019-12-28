@@ -5,4 +5,6 @@ data class SignUpForm(
     var loginPassword: String,
     var name: String,
     var address: String,
+    var detailAddress: String,
+    var zipCode: String,
     var phoneNumber: String)
