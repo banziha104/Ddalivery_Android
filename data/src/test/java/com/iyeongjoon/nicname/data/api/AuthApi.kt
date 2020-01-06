@@ -9,18 +9,19 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
+import java.util.concurrent.TimeUnit
 
 class AuthApi {
 
     @Test
     fun signup() {
-        assertEquals(
             AuthApi()
                 .auth()
-                .signUp(SignUpForm("test", "testps", "김테스트", "부천시", "01011112222"))
-                .blockingFirst()
-                .code, "OK"
-        )
+                .signUp(SignUpForm("test", "testps", "김테스트", "부천시", "1313","1313","01011112222"))
+                .test()
+                .awaitDone(3, TimeUnit.SECONDS)
+                .assertValue { it.code == "OK"}
+                .assertComplete()
     }
 
     @Test
@@ -28,7 +29,13 @@ class AuthApi {
         val a = AuthApi()
             .auth()
             .login(LoginForm("test","testps"))
-            .blockingFirst()
+            .doOnNext { print(it) }
+            .test()
+            .awaitDone(3, TimeUnit.SECONDS)
+            .assertValue{
+                it.code == "OK"
+            }
+            .assertComplete()
 
 
         println(a)

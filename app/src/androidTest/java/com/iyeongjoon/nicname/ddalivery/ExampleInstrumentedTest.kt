@@ -1,6 +1,7 @@
 package com.iyeongjoon.nicname.ddalivery
 
-import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.InstrumentationRegistry
+import androidx.test.InstrumentationRegistry.getTargetContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import okhttp3.OkHttpClient
 
@@ -21,7 +22,7 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
+        val appContext = getTargetContext()
         assertEquals("com.iyeongjoon.nicname.ddalivery", appContext.packageName)
     }
 

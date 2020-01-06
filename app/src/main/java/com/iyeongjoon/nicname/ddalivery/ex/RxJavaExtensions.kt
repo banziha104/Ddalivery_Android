@@ -1,6 +1,6 @@
 package com.iyeongjoon.nicname.ddalivery.ex
 
-import com.iyeongjoon.nicname.ddalivery.rx.AutoClearedDisposable
+import com.iyeongjoon.nicname.ddalivery.rx.activity.AutoClearedDisposable
 import io.reactivex.Completable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers

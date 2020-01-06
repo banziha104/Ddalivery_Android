@@ -1,9 +1,8 @@
-package com.iyeongjoon.nicname.ddalivery.di.ui.dialogs
+package com.iyeongjoon.nicname.ddalivery.ui.dialogs
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
-import android.os.Handler
 import android.view.View
 import android.view.Window
 import android.webkit.JavascriptInterface
@@ -11,12 +10,11 @@ import android.webkit.WebChromeClient
 import androidx.appcompat.app.AppCompatActivity
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
-import com.iyeongjoon.nicname.ddalivery.rx.AutoClearedDisposable
+import com.iyeongjoon.nicname.ddalivery.rx.activity.AutoClearedDisposable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.dialog_find_address.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 
 
 /**
@@ -32,8 +30,15 @@ class FindAddressDialog(val activity: AppCompatActivity, val setTxtAddress : (Ar
 
     val driver = PublishSubject.create<Array<String?>>()
 
-    val disposable = AutoClearedDisposable(activity)
-    val viewDisposables = AutoClearedDisposable(lifecycleOwner = activity, alwaysClearOnStop = false)
+    val disposable =
+        AutoClearedDisposable(
+            activity
+        )
+    val viewDisposables =
+        AutoClearedDisposable(
+            lifecycleOwner = activity,
+            alwaysClearOnStop = false
+        )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

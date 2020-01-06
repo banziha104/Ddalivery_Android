@@ -15,8 +15,8 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/edit_text_background"
             android:ems="10"
+            android:hint="이메일을 입력해주세요"
             android:inputType="textPersonName"
-            android:text="Name"
 
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,25 +29,26 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
             android:background="@drawable/edit_text_background"
-            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            android:ems="10"
+            android:hint="휴대폰 번호를 입력해주세요"
+            android:inputType="textPhonetic"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-            android:id="@+id/signUpEditPsCofirm"
+            android:id="@+id/signUpEditPsConfirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:background="@drawable/edit_text_background"
-            android:text="Name"
+            android:ems="10"
+            android:hint="패스워드를 한 번더 입력해주세요"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -59,11 +60,11 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
             android:background="@drawable/edit_text_background"
-            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            android:ems="10"
+            android:hint="성함을 입력해주세요"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
@@ -73,12 +74,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
-            android:background="@drawable/edit_text_background"
-            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            android:text="주소 찾기를 눌러주세요"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditAdressDetail"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
@@ -99,10 +101,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:ems="10"
             android:background="@drawable/edit_text_background"
-            android:inputType="textPersonName"
-            android:text="Name"
+            android:ems="10"
+            android:hint="패스워드 8글자 이상"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -128,8 +130,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="패스워드 확인"
-            app:layout_constraintBottom_toTopOf="@+id/signUpEditPsCofirm"
-            app:layout_constraintStart_toStartOf="@+id/signUpEditPsCofirm" />
+            app:layout_constraintBottom_toTopOf="@+id/signUpEditPsConfirm"
+            app:layout_constraintStart_toStartOf="@+id/signUpEditPsConfirm" />
 
     <TextView
             android:id="@+id/textView7"
@@ -140,10 +142,11 @@
             app:layout_constraintStart_toStartOf="@+id/signUpEditPhone" />
 
     <Button
-            android:id="@+id/button"
+            android:id="@+id/signUpBtnSubmit"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Button"
+            android:enabled="false"
+            android:text="회원가입 후 시작하기"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -175,19 +178,35 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="주소"
             app:layout_constraintBottom_toTopOf="@+id/signUpTxtAddress"
             app:layout_constraintStart_toStartOf="@+id/signUpTxtAddress" />
 
 
     <Button
-            android:id="@+id/signBtnFindAddress"
+            android:id="@+id/signUpBtnFindAddress"
             android:layout_width="71dp"
             android:layout_height="50dp"
-            android:text="Button"
+            android:text="주소 검색"
             app:layout_constraintBottom_toBottomOf="@+id/signUpTxtAddress"
             app:layout_constraintEnd_toEndOf="@+id/signUpEditName"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/signUpTxtAddress" />
+
+    <EditText
+            android:id="@+id/signUpEditAdressDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/edit_text_background"
+            android:ems="10"
+            android:hint="상세 주소 입력"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/signUpBtnSubmit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:enabled="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

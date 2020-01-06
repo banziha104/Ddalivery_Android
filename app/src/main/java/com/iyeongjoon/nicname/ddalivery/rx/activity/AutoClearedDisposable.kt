@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery.rx
+package com.iyeongjoon.nicname.ddalivery.rx.activity
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -9,10 +9,10 @@ import io.reactivex.disposables.Disposable
 
 // 라이프사이클에맞게 해제되는 익스텐션
 class AutoClearedDisposable(
-        private val lifecycleOwner: AppCompatActivity,
-        private val alwaysClearOnStop: Boolean = true,
-        private val compositeDisposable: CompositeDisposable = CompositeDisposable())
-    : LifecycleObserver {
+    private val lifecycleOwner: AppCompatActivity,
+    private val alwaysClearOnStop: Boolean = true,
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : LifecycleObserver {
+
 
     fun add(disposable: Disposable) {
         check(lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED))
