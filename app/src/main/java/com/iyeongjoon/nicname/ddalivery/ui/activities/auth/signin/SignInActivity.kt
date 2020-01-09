@@ -25,15 +25,10 @@ import org.jetbrains.anko.toast
 class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
 
     @Inject
-    lateinit var viewModelFactory: SignInViewModelFactory
-    lateinit var viewModel: SignInViewModel
-    val disposable =
-        AutoClearedDisposable(this)
-    val viewDisposables =
-        AutoClearedDisposable(
-            lifecycleOwner = this,
-            alwaysClearOnStop = false
-        )
+    private lateinit var viewModelFactory: SignInViewModelFactory
+    private lateinit var viewModel: SignInViewModel
+    private val disposable = AutoClearedDisposable(this)
+    private val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
