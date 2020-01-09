@@ -7,12 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.iyeongjoon.nicname.ddalivery.R
+import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
+import com.iyeongjoon.nicname.ddalivery.rx.fragment.AutoClearedDisposable
 import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
 class HomeFragment : DaggerFragment() {
 
+    @Inject private lateinit var viewModelFactory: HomeViewModelFactory
+    private lateinit var viewModel : HomeViewModel
+    private val disposables = AutoClearedDisposable(this)
+    private val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
 
-    private lateinit var viewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +29,12 @@ class HomeFragment : DaggerFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        lifecycle += disposables
+        lifecycle += viewDisposables
+        viewModel = ViewModelProviders.of(this, viewModelFactory)[HomeViewModel::class.java]
+
     }
+
 
 }
