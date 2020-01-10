@@ -10,11 +10,14 @@ import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
 import com.iyeongjoon.nicname.ddalivery.rx.fragment.AutoClearedDisposable
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import javax.inject.Inject
 
-class HomeFragment : DaggerFragment() {
+class HomeFragment : DaggerFragment(), AnkoLogger {
 
-    @Inject private lateinit var viewModelFactory: HomeViewModelFactory
+    @Inject lateinit var viewModelFactory: HomeViewModelFactory
     private lateinit var viewModel : HomeViewModel
     private val disposables = AutoClearedDisposable(this)
     private val viewDisposables = AutoClearedDisposable(lifecycleOwner = this,alwaysClearOnStop = false)
@@ -33,8 +36,19 @@ class HomeFragment : DaggerFragment() {
         lifecycle += disposables
         lifecycle += viewDisposables
         viewModel = ViewModelProviders.of(this, viewModelFactory)[HomeViewModel::class.java]
+        viewModel.productModel
 
     }
+
+
+    fun showProgressBar(){
+        homeProgressBar.visibility = View.VISIBLE
+    }
+    fun disapearProgressBar(){
+        homeProgressBar.visibility = View.INVISIBLE
+    }
+
+
 
 
 }

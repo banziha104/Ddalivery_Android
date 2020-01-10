@@ -1,7 +1,7 @@
 package com.iyeongjoon.nicname.domain.domain.product
 
 data class Data(
-    var content: List<Content>,
+    var content: ArrayList<Content>,
     var empty: Boolean,
     var first: Boolean,
     var last: Boolean,

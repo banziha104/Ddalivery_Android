@@ -10,5 +10,5 @@ import javax.inject.Singleton
 class ProductApiModule{
     @Provides
     @Singleton
-    fun provideProductApi() = ProductApi()
+    fun provideProductApi()  = ProductApi()
 }

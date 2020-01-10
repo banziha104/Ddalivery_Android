@@ -24,8 +24,7 @@ import org.jetbrains.anko.toast
  */
 class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
 
-    @Inject
-    private lateinit var viewModelFactory: SignInViewModelFactory
+    @Inject lateinit var viewModelFactory: SignInViewModelFactory
     private lateinit var viewModel: SignInViewModel
     private val disposable = AutoClearedDisposable(this)
     private val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)

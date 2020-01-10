@@ -13,13 +13,15 @@
         <activity android:name=".ui.activities.auth.signup.SignUpActivity"></activity>
         <activity android:name=".ui.activities.splash.SplashActivity" />
         <activity android:name=".ui.activities.auth.signin.SignInActivity">
+
+        </activity>
+        <activity android:name=".ui.activities.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.main.MainActivity"/>
     </application>
 
 </manifest>
