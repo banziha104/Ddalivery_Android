@@ -7,6 +7,8 @@ import io.reactivex.Observable
 
 class HomeViewModel(val productApi: ProductApi) : ViewModel() {
 
+    // 요청
+    val gridColumns = 2
     private val size = 100
     // 자동으로 페이지 증가
     private var page: Int = 0
