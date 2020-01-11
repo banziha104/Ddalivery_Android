@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.widget.EditText
 import com.iyeongjoon.nicname.data.form.auth.LoginForm
 import com.iyeongjoon.nicname.ddalivery.R
-import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
-import com.iyeongjoon.nicname.ddalivery.rx.activity.AutoClearedDisposable
+import com.iyeongjoon.nicname.core.ex.plusAssign
+import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
 import com.jakewharton.rxbinding3.view.clicks

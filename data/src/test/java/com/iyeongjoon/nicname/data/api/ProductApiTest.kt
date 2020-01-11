@@ -13,7 +13,7 @@ class ProductApiTest {
         productApi
             .product()
             .getProducts(100, 0)
-            .doOnNext{ print(it)}
+            .doOnNext{ print(it.data.content)}
             .test()
             .awaitDone(3, TimeUnit.SECONDS)
             .assertValue { it.code == "OK" }
