@@ -1,6 +1,5 @@
 package com.iyeongjoon.nicname.ddalivery.ex
 
-import android.widget.AbsListView
 import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject

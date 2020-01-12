@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable
 
@@ -15,15 +13,11 @@ import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.di.adapters.recyclerview.home.HomeAdapter
 import com.iyeongjoon.nicname.ddalivery.di.adapters.recyclerview.home.HomeAdapterViewModel
 import com.iyeongjoon.nicname.ddalivery.ex.endScrollEvent
-import com.jakewharton.rxbinding3.recyclerview.flingEvents
-import com.jakewharton.rxbinding3.recyclerview.scrollEvents
-import com.jakewharton.rxbinding3.recyclerview.scrollStateChanges
 import dagger.android.support.DaggerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
-import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 class HomeFragment : DaggerFragment(), AnkoLogger {

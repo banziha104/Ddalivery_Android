@@ -10,5 +10,9 @@ operator fun com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable.plusA
 
 operator fun com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable.plusAssign(disposable: Disposable)
         = this.add(disposable)
+
+operator fun com.iyeongjoon.nicname.core.rx.service.AutoClearedDisposable.plusAssign(disposable: Disposable)
+        = this.add(disposable)
+
 fun runOnIoScheduler(func: () -> Unit): Disposable
         = Completable.fromCallable(func).subscribeOn(Schedulers.io()).subscribe()
