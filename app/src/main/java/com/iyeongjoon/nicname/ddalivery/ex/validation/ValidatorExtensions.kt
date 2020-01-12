@@ -2,13 +2,9 @@ package com.iyeongjoon.nicname.ddalivery.ex.validation
 
 import android.content.Context
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import com.iyeongjoon.nicname.ddalivery.R
 import com.wajahatkarim3.easyvalidation.core.Validator
-import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
-import java.security.AccessControlContext
 
 fun Validator.checkWithEditText(
     context: Context,

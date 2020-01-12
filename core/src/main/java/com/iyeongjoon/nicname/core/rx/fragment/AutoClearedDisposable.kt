@@ -1,15 +1,16 @@
-package com.iyeongjoon.nicname.ddalivery.rx.activity
+package com.iyeongjoon.nicname.core.rx.fragment
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
 // 라이프사이클에맞게 해제되는 익스텐션
 class AutoClearedDisposable(
-    private val lifecycleOwner: AppCompatActivity,
+    private val lifecycleOwner: Fragment,
     private val alwaysClearOnStop: Boolean = true,
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : LifecycleObserver {
 
@@ -21,7 +22,7 @@ class AutoClearedDisposable(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun cleanUp() {
-        if (!alwaysClearOnStop && !lifecycleOwner.isFinishing) {
+        if (!alwaysClearOnStop && !lifecycleOwner.isDetached) {
             return
         }
         compositeDisposable.clear()

@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.iyeongjoon.nicname.ddalivery.GlideApp
 import com.iyeongjoon.nicname.ddalivery.R
+import com.iyeongjoon.nicname.ddalivery.ex.imageUrl
 
 
 class HomeAdapter(val viewModel : HomeAdapterViewModel) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
@@ -27,11 +28,12 @@ class HomeAdapter(val viewModel : HomeAdapterViewModel) : RecyclerView.Adapter<H
                 title.text = content.productName
                 GlideApp
                     .with(viewModel.context)
-                    .load(content.image)
+                    .load(content.image.imageUrl())
                     .into(img)
             }
         }
     }
+
 
     inner class HomeViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val container = view.findViewById<ConstraintLayout>(R.id.homeContainer)

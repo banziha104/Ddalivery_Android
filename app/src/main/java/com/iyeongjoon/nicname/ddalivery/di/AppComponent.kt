@@ -6,8 +6,10 @@ import com.iyeongjoon.nicname.ddalivery.di.global.NetworkModule
 import com.iyeongjoon.nicname.ddalivery.di.api.AuthApiModule
 import com.iyeongjoon.nicname.ddalivery.di.api.ProductApiModule
 import com.iyeongjoon.nicname.ddalivery.di.global.AppModule
+import com.iyeongjoon.nicname.ddalivery.di.global.LocationModule
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.ActivityBinder
 import com.iyeongjoon.nicname.ddalivery.di.ui.fragments.FragmentBinder
+import com.iyeongjoon.nicname.ddalivery.di.ui.service.ServiceBinder
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -21,9 +23,11 @@ import javax.inject.Singleton
     modules = [AndroidSupportInjectionModule::class,
         ActivityBinder::class,
         FragmentBinder::class,
+        ServiceBinder::class,
         NetworkModule::class,
         AuthApiModule::class,
         ProductApiModule::class,
+        LocationModule::class,
         AppModule::class]
 )
 interface AppComponent : AndroidInjector<DdaliveryApplication> {

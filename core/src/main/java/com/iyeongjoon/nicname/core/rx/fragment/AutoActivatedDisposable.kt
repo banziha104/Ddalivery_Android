@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.ddalivery.rx.fragment
+package com.iyeongjoon.nicname.core.rx.fragment
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

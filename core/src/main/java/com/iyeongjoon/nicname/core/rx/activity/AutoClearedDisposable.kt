@@ -1,28 +1,36 @@
-package com.iyeongjoon.nicname.ddalivery.rx.fragment
+package com.iyeongjoon.nicname.core.rx.activity
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import com.iyeongjoon.nicname.ddalivery.global.LifecycleDriver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
 // 라이프사이클에맞게 해제되는 익스텐션
 class AutoClearedDisposable(
-    private val lifecycleOwner: Fragment,
+    private val lifecycleOwner: AppCompatActivity,
     private val alwaysClearOnStop: Boolean = true,
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : LifecycleObserver {
 
 
     fun add(disposable: Disposable) {
+        LifecycleDriver.lifecycleDriver.onNext("ON_START")
         check(lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED))
         compositeDisposable.add(disposable)
     }
 
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    fun resume(){
+        LifecycleDriver.lifecycleDriver.onNext("ON_RESUME")
+    }
+
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun cleanUp() {
-        if (!alwaysClearOnStop && !lifecycleOwner.isDetached) {
+        LifecycleDriver.lifecycleDriver.onNext("ON_STOP")
+        if (!alwaysClearOnStop && !lifecycleOwner.isFinishing) {
             return
         }
         compositeDisposable.clear()
@@ -30,6 +38,7 @@ class AutoClearedDisposable(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun detachSelf() {
+        LifecycleDriver.lifecycleDriver.onNext("ON_DESTROY")
         compositeDisposable.clear()
         lifecycleOwner.lifecycle.removeObserver(this)
     }

@@ -5,12 +5,12 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.EditText
 import androidx.lifecycle.ViewModelProviders
+import com.iyeongjoon.nicname.core.ex.plusAssign
+import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.data.form.auth.SignUpForm
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
-import com.iyeongjoon.nicname.ddalivery.ex.plusAssign
 import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
-import com.iyeongjoon.nicname.ddalivery.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.view.focusChanges
