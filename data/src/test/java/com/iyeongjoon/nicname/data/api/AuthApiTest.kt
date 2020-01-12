@@ -16,17 +16,17 @@ class AuthApiTest {
 
     val authApi = AuthApi()
 
-    @Test
-    fun signup() {
-        authApi
-            .auth()
-            .signUp(SignUpForm("test", "testps", "김테스트", "부천시", "1313", "1313", "01011112222"))
-            .doOnNext{print(it)}
-            .test()
-            .awaitDone(3, TimeUnit.SECONDS)
-            .assertValue { it.code == "OK" }
-            .assertComplete()
-    }
+//    @Test
+//    fun signup() {
+//        authApi
+//            .auth()
+//            .signUp(SignUpForm("test", "testps", "김테스트", "부천시", "1313", "1313", "01011112222"))
+//            .doOnNext{print(it)}
+//            .test()
+//            .awaitDone(3, TimeUnit.SECONDS)
+//            .assertValue { it.code == "OK" }
+//            .assertComplete()
+//    }
 
 
     @Test
