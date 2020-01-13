@@ -45,7 +45,9 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-
+    implementation "org.jetbrains.anko:anko-commons:$ankoVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoVersion" //Mockito-Kotlin
     testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

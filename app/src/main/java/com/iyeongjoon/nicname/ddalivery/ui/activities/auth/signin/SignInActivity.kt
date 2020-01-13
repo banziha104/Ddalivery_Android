@@ -7,6 +7,7 @@ import com.iyeongjoon.nicname.data.form.auth.LoginForm
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
+import com.iyeongjoon.nicname.ddalivery.service.LocationService
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
 import com.jakewharton.rxbinding3.view.clicks
@@ -17,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_sign_in.*
 import org.jetbrains.anko.AnkoLogger
 import javax.inject.Inject
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.startService
 import org.jetbrains.anko.toast
 
 /**
@@ -37,7 +39,6 @@ class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
         lifecycle += disposable
         viewModel = ViewModelProviders.of(this, viewModelFactory)[SignInViewModel::class.java]
         bind()
-
     }
 
     /**

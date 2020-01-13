@@ -20,14 +20,17 @@
                 android:exported="true"></service>
 
         <activity android:name=".ui.activities.auth.signup.SignUpActivity" />
-        <activity android:name=".ui.activities.splash.SplashActivity" />
-        <activity android:name=".ui.activities.auth.signin.SignInActivity" />
-        <activity android:name=".ui.activities.main.MainActivity">
+        <activity android:name=".ui.activities.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.activities.auth.signin.SignInActivity">
+        </activity>
+        <activity android:name=".ui.activities.main.MainActivity">
         </activity>
     </application>
 

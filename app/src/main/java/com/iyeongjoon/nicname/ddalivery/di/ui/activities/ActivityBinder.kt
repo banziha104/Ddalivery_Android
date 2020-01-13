@@ -1,23 +1,29 @@
 package com.iyeongjoon.nicname.ddalivery.di.ui.activities
 
+import android.app.Activity
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules.MainModule
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules.SignInModule
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules.SignUpModule
+import com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules.SplashModule
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
+import com.iyeongjoon.nicname.ddalivery.ui.activities.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ActivityBinder{
 
-    @ContributesAndroidInjector(modules = arrayOf(MainModule::class))
+    @ContributesAndroidInjector(modules = [MainModule::class])
     abstract fun bindMainModule() : MainActivity
 
-    @ContributesAndroidInjector(modules = arrayOf(SignInModule::class))
+    @ContributesAndroidInjector(modules = [SignInModule::class])
     abstract fun bindSignInModule() : SignInActivity
 
-    @ContributesAndroidInjector(modules = arrayOf(SignUpModule::class))
+    @ContributesAndroidInjector(modules = [SignUpModule::class])
     abstract fun bindSignUpModule() : SignUpActivity
+
+    @ContributesAndroidInjector(modules = [SplashModule::class])
+    abstract fun bindSplashModule() : SplashActivity
 }

@@ -1,11 +1,13 @@
 package com.iyeongjoon.nicname.ddalivery.di
 
 import android.app.Application
+import android.content.Context
 import com.iyeongjoon.nicname.ddalivery.DdaliveryApplication
 import com.iyeongjoon.nicname.ddalivery.di.global.NetworkModule
 import com.iyeongjoon.nicname.ddalivery.di.api.AuthApiModule
 import com.iyeongjoon.nicname.ddalivery.di.api.ProductApiModule
 import com.iyeongjoon.nicname.ddalivery.di.global.AppModule
+import com.iyeongjoon.nicname.ddalivery.di.global.LocalDatabaseModule
 import com.iyeongjoon.nicname.ddalivery.di.global.LocationModule
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.ActivityBinder
 import com.iyeongjoon.nicname.ddalivery.di.ui.fragments.FragmentBinder
@@ -28,13 +30,14 @@ import javax.inject.Singleton
         AuthApiModule::class,
         ProductApiModule::class,
         LocationModule::class,
+        LocalDatabaseModule::class,
         AppModule::class]
 )
 interface AppComponent : AndroidInjector<DdaliveryApplication> {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        fun application(app: Application): Builder
+        fun application(context : Context): Builder
 
         fun build(): AppComponent
     }

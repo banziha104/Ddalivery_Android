@@ -1,4 +1,4 @@
-package com.iyeongjoon.nicname.domain.domain.localdb.token
+package com.iyeongjoon.nicname.domain.domain.db.entity.token
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
