@@ -54,44 +54,40 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
         viewDisposables +=
             viewModel.submitCheck
                 .subscribe({
-                    it.forEach{ if(!it.value) return@subscribe }
+                    it.forEach { if (!it.value) return@subscribe }
                     signUpBtnSubmit.isEnabled = true
                 }, {
                     it.printStackTrace()
                 })
-        viewDisposables +=
-            signUpBtnFindAddress.clicks()
-                .subscribe({
-                    val dialog =
-                        FindAddressDialog(
-                            this,
-                            ::setAddress
-                        )
-                    dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                    dialog.show()
-                }, {
-                    it.printStackTrace()
-                })
+        viewDisposables += signUpBtnFindAddress.clicks()
+            .subscribe({
+                val dialog =
+                    FindAddressDialog(this, ::setAddress)
+                dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                dialog.show()
+            }, {
+                it.printStackTrace()
+            })
 
-        viewDisposables +=
-            signUpBtnSubmit
-                .clicks()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    if(viewModel.zipCode == null){
-                        toast("우편번호가 잘못되었습니다. 주소를 다시 선택해 주세요").show()
-                        return@subscribe
-                    }
+        viewDisposables += signUpBtnSubmit
+            .clicks()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                if (viewModel.zipCode == null) {
+                    toast("우편번호가 잘못되었습니다. 주소를 다시 선택해 주세요").show()
+                    return@subscribe
+                }
 
-                    if (signUpEditPs.text.toString() != signUpEditPsConfirm.text.toString()){
-                        toast("비밀번호가 서로 일치하지 않습니다").show()
-                        return@subscribe
-                    }
+                if (signUpEditPs.text.toString() != signUpEditPsConfirm.text.toString()) {
+                    toast("비밀번호가 서로 일치하지 않습니다").show()
+                    return@subscribe
+                }
 
-                    disposable += viewModel
-                        .authApi
-                        .auth()
-                        .signUp(SignUpForm(
+                disposable += viewModel
+                    .authApi
+                    .auth()
+                    .signUp(
+                        SignUpForm(
                             signUpEditId.text.toString(),
                             signUpEditPsConfirm.text.toString(),
                             signUpEditName.text.toString(),
@@ -99,22 +95,24 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
                             signUpEditAdressDetail.text.toString(),
                             viewModel.zipCode!!,
                             signUpEditPhone.text.toString()
-                        ))
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({
-                            if (it.code == "OK"){
-                                toast("회원가입에 성공했습니다").show()
-                                moveToSignIn()
-                            }else{
-                                if (it.message == "로그인 아이디가 중복되었습니다") toast("이미 존재하는 이메일입니다").show()
-                                else toast("회원가입 오류입니다. 관리자에게 문의해주세요").show()
-                            }
-                        },{
-                            it.printStackTrace()
-                        })
-                },{
-                    it.printStackTrace()
-                })
+                        )
+                    )
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({
+                        if (it.code == "OK") {
+                            toast("회원가입에 성공했습니다").show()
+                            moveToSignIn()
+                        } else {
+                            if (it.message == "로그인 아이디가 중복되었습니다") toast("이미 존재하는 이메일입니다").show()
+                            else toast("회원가입 오류입니다. 관리자에게 문의해주세요").show()
+                        }
+                    }, {
+                        it.printStackTrace()
+                        toast("네트워크 오류입니다. 관리자에게 문의해주세요").show()
+                    })
+            }, {
+                it.printStackTrace()
+            })
 
         handleEditTextFocus(viewModel.editTextsAndRule)
     }
@@ -175,7 +173,7 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
         }
     }
 
-    private fun moveToSignIn(){
+    private fun moveToSignIn() {
         startActivity<SignInActivity>()
         finish()
     }

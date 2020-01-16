@@ -1,6 +1,6 @@
 package com.iyeongjoon.nicname.data.api
 
-import com.iyeongjoon.nicname.data.constants.BASE_URL
+import com.iyeongjoon.nicname.data.const.BASE_URL
 import com.iyeongjoon.nicname.data.modules.NetworkModule
 import retrofit2.Retrofit
 

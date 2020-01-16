@@ -8,6 +8,8 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import io.reactivex.Observable
+import io.reactivex.Single
+import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -15,7 +17,7 @@ import org.jetbrains.anko.info
 @SuppressLint( "MissingPermission")
 class LocationEvent(context: Context) : AnkoLogger{
 
-    private val subject : PublishSubject<Location> = PublishSubject.create()
+    private val subject : BehaviorSubject<Location> = BehaviorSubject.create()
     private val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     private val locationListener = object : LocationListener {
         override fun onLocationChanged(location: Location?) {
@@ -30,6 +32,11 @@ class LocationEvent(context: Context) : AnkoLogger{
         override fun onProviderDisabled(provider: String?) {}
     }
 
+    fun getSingle() : Single<Location>{
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1.0f, locationListener)
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 1.0f, locationListener)
+        return subject.singleOrError()
+    }
     fun getLocationObserver() : Observable<Location>{
         info { "로케이션 get" }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1.0f, locationListener)

@@ -31,10 +31,9 @@ ext {
     ktxVersion = '1.0.0-alpha1'
     constraintLayout = '1.1.3'
     easyValidationVersion = '1.0.1'
-//    xmltojsonVersion = '1.4.4'
-
+    jwtDecodeVersion='1.4.0'
+    googleMapVersion='17.0.0'
     //test
-
     mockitoVersion ='2.1.0'
     mockitoInlineVersion ='2.21.0'
 
@@ -44,4 +43,5 @@ ext {
     androidxJunitVersion = '1.1.1'
     espressVersion = '3.1.0'
     androidTestRuleVersion='1.1.0'
+
 }

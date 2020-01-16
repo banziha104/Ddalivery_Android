@@ -2,7 +2,7 @@ package com.iyeongjoon.nicname.data.api.auth
 
 import com.iyeongjoon.nicname.data.form.auth.LoginForm
 import com.iyeongjoon.nicname.data.form.auth.SignUpForm
-import com.iyeongjoon.nicname.domain.domain.auth.Token
+import com.iyeongjoon.nicname.domain.domain.api.entity.auth.Token
 import com.iyeongjoon.nicname.domain.domain.base.ApiResponse
 import io.reactivex.Observable
 import retrofit2.http.Body

@@ -3,12 +3,8 @@ package com.iyeongjoon.nicname.ddalivery.di
 import android.app.Application
 import android.content.Context
 import com.iyeongjoon.nicname.ddalivery.DdaliveryApplication
-import com.iyeongjoon.nicname.ddalivery.di.global.NetworkModule
-import com.iyeongjoon.nicname.ddalivery.di.api.AuthApiModule
-import com.iyeongjoon.nicname.ddalivery.di.api.ProductApiModule
-import com.iyeongjoon.nicname.ddalivery.di.global.AppModule
-import com.iyeongjoon.nicname.ddalivery.di.global.LocalDatabaseModule
-import com.iyeongjoon.nicname.ddalivery.di.global.LocationModule
+import com.iyeongjoon.nicname.ddalivery.di.api.ApiModule
+import com.iyeongjoon.nicname.ddalivery.di.global.*
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.ActivityBinder
 import com.iyeongjoon.nicname.ddalivery.di.ui.fragments.FragmentBinder
 import com.iyeongjoon.nicname.ddalivery.di.ui.service.ServiceBinder
@@ -27,10 +23,10 @@ import javax.inject.Singleton
         FragmentBinder::class,
         ServiceBinder::class,
         NetworkModule::class,
-        AuthApiModule::class,
-        ProductApiModule::class,
+        ApiModule::class,
         LocationModule::class,
         LocalDatabaseModule::class,
+        DriverModule::class,
         AppModule::class]
 )
 interface AppComponent : AndroidInjector<DdaliveryApplication> {
