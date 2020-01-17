@@ -15,7 +15,7 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.startService
 import javax.inject.Inject
 
-class MainActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionController.CallBack {
+class MainActivity : DaggerAppCompatActivity(), AnkoLogger{
 
     @Inject
     lateinit var viewModelFactory: MainViewModelFactory
@@ -27,7 +27,6 @@ class MainActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        permissionCheck()
         lifecycle += disposables
         lifecycle += viewDisposables
         viewModel = ViewModelProviders.of(this, viewModelFactory)[MainViewModel::class.java]
@@ -60,17 +59,4 @@ class MainActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionController
         })
     }
 
-    fun permissionCheck() {
-        PermissionController(
-            this, arrayOf(
-                Manifest.permission.INTERNET,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            )
-        ).checkVersion()
-    }
-
-    override fun init() {
-        startService<LocationService>()
-    }
 }

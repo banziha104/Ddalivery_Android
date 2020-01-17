@@ -1,6 +1,7 @@
 package com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules
 
 import com.iyeongjoon.nicname.data.api.auth.AuthApi
+import com.iyeongjoon.nicname.ddalivery.db.LocalDatabase
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInViewModelFactory
 import dagger.Module
 import dagger.Provides
@@ -9,7 +10,7 @@ import dagger.Provides
 class SignInModule{
 
     @Provides
-    fun provideSignInViewModelFactory(authApi: AuthApi) = SignInViewModelFactory(authApi)
+    fun provideSignInViewModelFactory(authApi: AuthApi,localDatabase: LocalDatabase) = SignInViewModelFactory(authApi,localDatabase)
 
 
 }

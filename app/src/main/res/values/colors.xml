@@ -4,15 +4,16 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="border_org">#BBBBBB</color>
-    <color name="border_click">#000000</color>
-    <color name="border_success">#35ba37</color>
-    <color name="border_fail">#d04949</color>
+    <color name="borderOrg">#BBBBBB</color>
+    <color name="borderClick">#000000</color>
+    <color name="borderSuccess">#35ba37</color>
+    <color name="borderFail">#d04949</color>
 
 
     <color name="whiteGray">#EEEEEE</color>
     <color name="recyclerViewBack">#ecedf2</color>
+    <color name="grayBackground">#BBBBBB</color>
     <color name="grayDark">#565361</color>
-    <color name="icon_unselected">#818181</color>
-    <color name="icon_selected">#565361</color>
+    <color name="iconUnselected">#818181</color>
+    <color name="iconSelected">#565361</color>
 </resources>

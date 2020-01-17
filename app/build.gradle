@@ -79,19 +79,23 @@ dependencies {
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
     implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:$easyValidationVersion"
+    implementation "com.auth0.android:jwtdecode:$jwtDecodeVersion"
     implementation "androidx.room:room-runtime:$roomVersion"
-    annotationProcessor "androidx.room:room-compiler:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     implementation "androidx.room:room-rxjava2:$roomVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "com.google.android.gms:play-services-maps:$googleMapVersion"
+
+    kapt "android.arch.persistence.room:compiler:$roomVersion"
     kapt 'androidx.lifecycle:lifecycle-compiler:2.0.0'
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-//    implementation 'com.android.support:appcompat-v7:28.0.0'
-//    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
     testImplementation "junit:junit:$junitVersion"
-//    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:
+    
+    annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test:rules:$androidTestRuleVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressVersion"
