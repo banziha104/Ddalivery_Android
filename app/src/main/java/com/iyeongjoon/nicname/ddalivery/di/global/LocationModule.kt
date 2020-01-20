@@ -1,6 +1,5 @@
 package com.iyeongjoon.nicname.ddalivery.di.global
 
-import android.app.Application
 import android.content.Context
 import com.iyeongjoon.nicname.core.gps.LocationEvent
 import dagger.Module

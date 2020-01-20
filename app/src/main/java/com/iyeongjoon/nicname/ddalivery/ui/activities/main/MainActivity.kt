@@ -1,18 +1,14 @@
 package com.iyeongjoon.nicname.ddalivery.ui.activities.main
 
-import android.Manifest
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.tabs.TabLayout
-import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.core.ex.plusAssign
-import com.iyeongjoon.nicname.core.permission.PermissionController
 import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
-import com.iyeongjoon.nicname.ddalivery.service.LocationService
+import com.iyeongjoon.nicname.ddalivery.R
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.startService
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity(), AnkoLogger{

@@ -9,13 +9,13 @@ import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.data.form.auth.SignUpForm
 import com.iyeongjoon.nicname.ddalivery.R
-import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
 import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
+import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.view.focusChanges
 import com.jakewharton.rxbinding3.widget.textChanges
-import com.wajahatkarim3.easyvalidation.core.rules.*
+import com.wajahatkarim3.easyvalidation.core.rules.BaseRule
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -61,8 +61,7 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
                 })
         viewDisposables += signUpBtnFindAddress.clicks()
             .subscribe({
-                val dialog =
-                    FindAddressDialog(this, ::setAddress)
+                val dialog = FindAddressDialog(this, ::setAddress)
                 dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 dialog.show()
             }, {

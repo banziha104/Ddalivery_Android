@@ -1,13 +1,12 @@
 package com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.widget.EditText
-import com.iyeongjoon.nicname.data.form.auth.LoginForm
-import com.iyeongjoon.nicname.ddalivery.R
+import androidx.lifecycle.ViewModelProviders
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
-import com.iyeongjoon.nicname.ddalivery.service.LocationService
+import com.iyeongjoon.nicname.data.form.auth.LoginForm
+import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
 import com.iyeongjoon.nicname.domain.domain.db.entity.token.TokenEntity
@@ -17,7 +16,10 @@ import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_sign_in.*
-import org.jetbrains.anko.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
+import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 /**

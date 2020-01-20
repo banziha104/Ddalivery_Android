@@ -1,18 +1,17 @@
 package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.home
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable
-
 import com.iyeongjoon.nicname.ddalivery.R
+import com.iyeongjoon.nicname.ddalivery.ex.endScrollEvent
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.home.HomeAdapter
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.home.HomeAdapterViewModel
-import com.iyeongjoon.nicname.ddalivery.ex.endScrollEvent
 import dagger.android.support.DaggerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -64,7 +63,7 @@ class HomeFragment : DaggerFragment(), AnkoLogger {
                     .subscribe({ product ->
                         viewModel.dataDriver.product.onNext(product)
                         info { "사이즈 ${product.data.content.size}" }
-                        homeAdapter = HomeAdapter(HomeAdapterViewModel(product, context!!))
+                        homeAdapter = HomeAdapter(HomeAdapterViewModel(product, context!!,viewDisposables))
                         homeRecyclerView.apply {
                             adapter = homeAdapter
                             layoutManager = GridLayoutManager(context, viewModel.gridColumns)

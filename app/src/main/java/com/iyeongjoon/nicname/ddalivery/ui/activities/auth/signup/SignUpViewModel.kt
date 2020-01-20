@@ -1,17 +1,11 @@
 package com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup
 
-import android.app.Application
-import android.content.Context
-import android.widget.EditText
 import androidx.lifecycle.ViewModel
 import com.iyeongjoon.nicname.data.api.auth.AuthApi
 import com.iyeongjoon.nicname.ddalivery.R
 import com.wajahatkarim3.easyvalidation.core.rules.*
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 
 class SignUpViewModel(val authApi: AuthApi) : ViewModel(),AnkoLogger{
 

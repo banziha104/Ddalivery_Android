@@ -1,6 +1,5 @@
 package com.iyeongjoon.nicname.ddalivery.di.ui.activities
 
-import android.app.Activity
 import com.iyeongjoon.nicname.ddalivery.di.ui.activities.modules.*
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity

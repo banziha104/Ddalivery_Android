@@ -1,6 +1,5 @@
 package com.iyeongjoon.nicname.ddalivery.di
 
-import android.app.Application
 import android.content.Context
 import com.iyeongjoon.nicname.ddalivery.DdaliveryApplication
 import com.iyeongjoon.nicname.ddalivery.di.api.ApiModule

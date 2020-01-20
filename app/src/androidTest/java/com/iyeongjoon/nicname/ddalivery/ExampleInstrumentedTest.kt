@@ -1,15 +1,10 @@
 package com.iyeongjoon.nicname.ddalivery
 
-import androidx.test.InstrumentationRegistry
 import androidx.test.InstrumentationRegistry.getTargetContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import okhttp3.OkHttpClient
-
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
-import javax.inject.Inject
 
 /**
  * Instrumented test, which will execute on an Android device.

@@ -6,7 +6,7 @@
 
     <color name="borderOrg">#BBBBBB</color>
     <color name="borderClick">#000000</color>
-    <color name="borderSuccess">#35ba37</color>
+    <color name="borderSuccess">#35BA37</color>
     <color name="borderFail">#d04949</color>
 
 

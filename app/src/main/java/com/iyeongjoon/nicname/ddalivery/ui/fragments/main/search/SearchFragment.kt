@@ -1,15 +1,12 @@
 package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.search
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable
-
 import com.iyeongjoon.nicname.ddalivery.R
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject

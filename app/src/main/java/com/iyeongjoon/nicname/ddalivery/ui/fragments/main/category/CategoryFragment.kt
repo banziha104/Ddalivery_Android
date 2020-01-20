@@ -1,17 +1,14 @@
 package com.iyeongjoon.nicname.ddalivery.ui.fragments.main.category
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable
-
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.category.CategoryAdapter
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.category.CategoryAdapterViewModel
@@ -19,7 +16,6 @@ import dagger.android.support.DaggerFragment
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_category.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
