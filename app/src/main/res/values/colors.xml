@@ -11,7 +11,7 @@
 
 
     <color name="whiteGray">#EEEEEE</color>
-    <color name="recyclerViewBack">#ecedf2</color>
+    <color name="recyclerViewBack">#FFFFFF</color>
     <color name="grayBackground">#BBBBBB</color>
     <color name="grayDark">#565361</color>
     <color name="iconUnselected">#818181</color>

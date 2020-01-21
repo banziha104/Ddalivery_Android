@@ -6,13 +6,15 @@ import com.iyeongjoon.nicname.core.gps.LocationEvent
 import com.iyeongjoon.nicname.data.api.product.ProductApi
 import com.iyeongjoon.nicname.data.driver.DataDriver
 import com.iyeongjoon.nicname.ddalivery.const.KILO_METER
+import com.iyeongjoon.nicname.ddalivery.db.LocalDatabase
 import com.iyeongjoon.nicname.domain.domain.api.entity.product.Product
 import io.reactivex.Observable
 import org.jetbrains.anko.AnkoLogger
 
 class HomeViewModel(val productApi: ProductApi,
                     val locationEvent: LocationEvent,
-                    val dataDriver: DataDriver
+                    val dataDriver: DataDriver,
+                    val localDatabase: LocalDatabase
 ) : ViewModel(), AnkoLogger {
 
     // 요청

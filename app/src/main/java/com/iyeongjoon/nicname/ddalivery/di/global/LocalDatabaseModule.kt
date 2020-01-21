@@ -11,5 +11,5 @@ import javax.inject.Singleton
 class LocalDatabaseModule{
     @Provides
     @Singleton
-    fun provideLocalDatabase(context: Context) = Room.databaseBuilder(context,LocalDatabase::class.java,"ddalivery.db").build()
+    fun provideLocalDatabase(context: Context) = Room.databaseBuilder(context,LocalDatabase::class.java,"ddalivery.db").fallbackToDestructiveMigration().build()
 }

@@ -63,7 +63,7 @@ class HomeFragment : DaggerFragment(), AnkoLogger {
                     .subscribe({ product ->
                         viewModel.dataDriver.product.onNext(product)
                         info { "사이즈 ${product.data.content.size}" }
-                        homeAdapter = HomeAdapter(HomeAdapterViewModel(product, context!!,viewDisposables))
+                        homeAdapter = HomeAdapter(HomeAdapterViewModel(product, activity!!,viewDisposables,viewModel.localDatabase))
                         homeRecyclerView.apply {
                             adapter = homeAdapter
                             layoutManager = GridLayoutManager(context, viewModel.gridColumns)

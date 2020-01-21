@@ -17,6 +17,7 @@ import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.BiFunction
+import io.reactivex.rxkotlin.Observables
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -40,10 +41,10 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
 
     private fun bind() {
         startLocationService()
-        viewDisposables += Observable.zip(
+        viewDisposables += Observables.zip(
             viewModel.localDatabase.tokenDao().findAll(),
-            viewModel.locationEvent.getLocationObserver(),
-            BiFunction<List<TokenEntity>, Location, SplashDataType> { t1, t2 -> SplashDataType(t1, t2) })
+            viewModel.locationEvent.getLocationObserver()
+        ) { t1, t2 -> SplashDataType(t1, t2) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({

@@ -4,6 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.fragment.app.Fragment
+import com.iyeongjoon.nicname.core.rx.AutoClearedDisposableContract
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
@@ -11,10 +12,10 @@ import io.reactivex.disposables.Disposable
 class AutoClearedDisposable(
     private val lifecycleOwner: Fragment,
     private val alwaysClearOnStop: Boolean = true,
-    private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : LifecycleObserver {
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : AutoClearedDisposableContract {
 
 
-    fun add(disposable: Disposable) {
+    override fun add(disposable: Disposable) {
         check(lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED))
         compositeDisposable.add(disposable)
     }

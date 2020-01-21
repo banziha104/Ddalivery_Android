@@ -13,9 +13,8 @@ import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.ddalivery.GlideApp
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.imageUrl
-import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
-import com.iyeongjoon.nicname.ddalivery.ui.dialogs.homeItem.HomeItemDialog
-import com.iyeongjoon.nicname.ddalivery.ui.dialogs.homeItem.HomeItemDialogViewModel
+import com.iyeongjoon.nicname.ddalivery.ui.dialogs.Item.ItemDialog
+import com.iyeongjoon.nicname.ddalivery.ui.dialogs.Item.ItemDialogViewModel
 import com.jakewharton.rxbinding3.view.clicks
 import io.reactivex.android.schedulers.AndroidSchedulers
 
@@ -42,9 +41,11 @@ class HomeAdapter(val viewModel: HomeAdapterViewModel) :
                     .clicks()
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe ({
-                        val dialog = HomeItemDialog(HomeItemDialogViewModel(viewModel.context,viewModel.autoClearedDisposable))
-                        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                        dialog.show()
+                        viewModel.run {
+                            val dialog = ItemDialog(ItemDialogViewModel(content,context,autoClearedDisposable,localDatabase))
+                            dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                            dialog.show()
+                        }
                     },{
                         it.printStackTrace()
                     })

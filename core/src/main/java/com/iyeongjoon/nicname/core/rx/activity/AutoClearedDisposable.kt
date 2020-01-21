@@ -4,6 +4,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.appcompat.app.AppCompatActivity
+import com.iyeongjoon.nicname.core.rx.AutoClearedDisposableContract
 import com.iyeongjoon.nicname.ddalivery.global.LifecycleDriver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -14,10 +15,10 @@ import org.jetbrains.anko.info
 class AutoClearedDisposable(
     private val lifecycleOwner: AppCompatActivity,
     private val alwaysClearOnStop: Boolean = true,
-    private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : LifecycleObserver, AnkoLogger {
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()) : AutoClearedDisposableContract, AnkoLogger {
 
 
-    fun add(disposable: Disposable) {
+    override fun add(disposable: Disposable) {
         LifecycleDriver.lifecycleDriver.onNext("ON_START")
         info { "라이프사이클 : 스타트" }
         check(lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED))

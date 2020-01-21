@@ -12,6 +12,7 @@ import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.iyeongjoon.nicname.ddalivery.ui.dialogs.FindAddressDialog
+import com.iyeongjoon.nicname.ddalivery.utils.EditTextHandler
 import com.jakewharton.rxbinding3.view.clicks
 import com.jakewharton.rxbinding3.view.focusChanges
 import com.jakewharton.rxbinding3.widget.textChanges
@@ -51,14 +52,13 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
 
     private fun bind() {
 
-        viewDisposables +=
-            viewModel.submitCheck
-                .subscribe({
-                    it.forEach { if (!it.value) return@subscribe }
-                    signUpBtnSubmit.isEnabled = true
-                }, {
-                    it.printStackTrace()
-                })
+        viewDisposables += viewModel.submitCheck
+            .subscribe({
+                it.forEach { if (!it.value) return@subscribe }
+                signUpBtnSubmit.isEnabled = true
+            }, {
+                it.printStackTrace()
+            })
         viewDisposables += signUpBtnFindAddress.clicks()
             .subscribe({
                 val dialog = FindAddressDialog(this, ::setAddress)
@@ -113,7 +113,7 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
                 it.printStackTrace()
             })
 
-        handleEditTextFocus(viewModel.editTextsAndRule)
+        EditTextHandler(viewDisposables,SignUpActivity@this,viewModel.submitCheck).handleEditTextFocusWithId(viewModel.editTextsAndRule)
     }
 
     /**
@@ -130,47 +130,6 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
         signUpEditAdressDetail.isEnabled = true
     }
 
-    /***
-     * editText 포커싱 처리
-     */
-    private fun handleEditTextFocus(pairs: Array<Pair<Int, Array<BaseRule>>>) {
-        pairs
-            .forEach {
-                it.apply {
-                    findViewById<EditText>(first).run {
-                        viewDisposables +=
-                            focusChanges()
-                                .subscribe {
-                                    background =
-                                        if (it) {
-                                            bindValidation(Pair(this, second))
-                                            getDrawable(R.drawable.edit_text_background_onfocus)
-                                        } else {
-                                            getDrawable(R.drawable.edit_text_background)
-                                        }
-                                }
-                    }
-                }
-            }
-    }
-
-
-    /***
-     * 각 텍스트뷰에 유효성 검증
-     * @param pair Pair<EditText, Array<BaseRule>>
-     */
-    private fun bindValidation(pair: Pair<EditText, Array<BaseRule>>) {
-        pair.run {
-            viewDisposables += first.textChanges()
-                .subscribe({
-                    val validator = first.validator()
-                    pair.second.forEach { rule -> validator.addRule(rule) }
-                    validator.checkWithEditText(this@SignUpActivity, first, viewModel.submitCheck)
-                }, { throwable ->
-                    throwable.printStackTrace()
-                })
-        }
-    }
 
     private fun moveToSignIn() {
         startActivity<SignInActivity>()

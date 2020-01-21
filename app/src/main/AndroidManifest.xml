@@ -25,7 +25,8 @@
                 android:enabled="true"
                 android:exported="true" />
 
-        <activity android:name=".ui.activities.auth.signup.SignUpActivity" />
+        <activity android:name=".ui.activities.auth.signup.SignUpActivity">
+        </activity>
         <activity android:name=".ui.activities.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
