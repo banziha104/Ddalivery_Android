@@ -15,7 +15,7 @@ class AutoActivatedDisposable(
 
     private var disposable: Disposable? = null
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun activate() {
         disposable = func.invoke()
     }

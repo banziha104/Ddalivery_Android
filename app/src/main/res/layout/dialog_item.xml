@@ -81,7 +81,7 @@
                         app:layout_constraintGuide_percent=".4" />
 
                 <Button
-                        android:id="@+id/button"
+                        android:id="@+id/itemDialogBtnSubmit"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:text="Button"
@@ -93,24 +93,163 @@
                         android:id="@+id/itemDialogTxtTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif"
                         android:text="TextView"
+                        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                        android:textSize="17sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/itemDialogImg" />
 
                 <EditText
                         android:id="@+id/itemDialogEdit"
-
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:background="@drawable/edit_text_background"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:text="1"
+                        android:textAlignment="textEnd"
+                        app:layout_constraintBottom_toTopOf="@+id/itemDialogBtnSubmit"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+                        app:layout_constraintStart_toStartOf="@+id/guideline14" />
+
+                <Button
+                        android:id="@+id/itemDialogBtnMinus"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="-"
+                        app:layout_constraintBottom_toBottomOf="@+id/itemDialogEdit"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/itemDialogEdit" />
+
+                <Button
+                        android:id="@+id/itemDialogBtnPlus"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="+"
+                        app:layout_constraintBottom_toBottomOf="@+id/itemDialogEdit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline15"
+                        app:layout_constraintTop_toTopOf="@+id/itemDialogEdit" />
+
+                <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="96dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="Name"
-                        app:layout_constraintBottom_toTopOf="@+id/button"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="가격"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/itemDialogTxtAddress" />
+
+                <TextView
+                        android:id="@+id/itemDialogTxtSeller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="TextView"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/itemDialogTxtTitle" />
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="16dp" />
+
+                <TextView
+                        android:id="@+id/itemDialogTxtAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.13" />
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.87" />
+
+                <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="판매자 주소"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/itemDialogTxtSeller" />
+
+                <TextView
+                        android:id="@+id/textview13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="판매자 명"
+                        android:textSize="10sp"
+                        android:typeface="sans"
+                        app:layout_constraintBottom_toTopOf="@+id/itemDialogTxtSeller"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12" />
+
+                <TextView
+                        android:id="@+id/itemDialogTxtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="단위"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@+id/guideline16"
+                        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                        android:id="@+id/itemDialogTxtDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        app:layout_constraintStart_toStartOf="@+id/guideline16"
+                        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="수량"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toTopOf="@+id/itemDialogEdit"
+                        app:layout_constraintStart_toStartOf="@+id/guideline12" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

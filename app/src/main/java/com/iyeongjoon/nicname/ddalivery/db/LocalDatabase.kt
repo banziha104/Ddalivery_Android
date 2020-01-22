@@ -9,7 +9,7 @@ import com.iyeongjoon.nicname.domain.domain.db.entity.token.TokenEntity
 
 @Database(
     entities = [TokenEntity::class, CartEntity::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class LocalDatabase : RoomDatabase() {

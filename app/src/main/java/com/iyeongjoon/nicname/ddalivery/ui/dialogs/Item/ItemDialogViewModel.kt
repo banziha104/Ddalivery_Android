@@ -20,7 +20,6 @@ class ItemDialogViewModel(
 ) {
     val width = (context.displayMetrics.widthPixels * 0.75).toInt()
     val height = (context.displayMetrics.heightPixels * 0.8).toInt()
-    val checker = BehaviorSubject.create<MutableMap<Int, Boolean>>()
-
+    val checker = BehaviorSubject.createDefault<MutableMap<Int, Boolean>>(mutableMapOf(R.id.itemDialogEdit to false))
     val rules  = arrayOf(NonEmptyRule(),ValidNumberRule())
 }

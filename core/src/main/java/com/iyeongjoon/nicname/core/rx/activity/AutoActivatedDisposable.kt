@@ -19,11 +19,11 @@ class AutoActivatedDisposable(
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun activate() {
         LifecycleDriver.lifecycleDriver.onNext("ON_START")
-        disposable = func.invoke()
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun resume(){
+        disposable = func.invoke()
         LifecycleDriver.lifecycleDriver.onNext("ON_RESUME")
     }
 

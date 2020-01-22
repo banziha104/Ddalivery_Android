@@ -19,9 +19,16 @@ interface CartDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity : CartEntity)
 
+    @Update(onConflict =  OnConflictStrategy.REPLACE)
+    fun update(entity : CartEntity)
+
+
     @Delete
     fun delete(entity : CartEntity)
 
-    @Update(onConflict =  OnConflictStrategy.REPLACE)
-    fun update(entity : CartEntity)
+
+    @Query("DELETE FROM cart")
+    fun deleteAll()
+
+
 }
