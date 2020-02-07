@@ -1,11 +1,16 @@
 package com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.cart
 
 import android.content.Context
+import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
+import com.iyeongjoon.nicname.ddalivery.db.LocalDatabase
 import com.iyeongjoon.nicname.domain.domain.api.entity.category.Category
 import com.iyeongjoon.nicname.domain.domain.db.entity.cart.CartEntity
 
 class CartAdapterViewModel(val context: Context,
-                           val data: List<CartEntity>
+                           val data: ArrayList<CartEntity>,
+                           val disposable: AutoClearedDisposable,
+                           val database : LocalDatabase
 ){
-    val itemsize = data.size
+    var itemSize: Int = 0
+    get() = data.size
 }

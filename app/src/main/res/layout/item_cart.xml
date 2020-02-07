@@ -29,8 +29,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.068"
                     app:layout_constraintStart_toEndOf="@+id/itemCartImg"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,6 +51,34 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_begin="116dp" />
+
+            <TextView
+                    android:id="@+id/itemCartTxtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="TextView"
+                    app:layout_constraintStart_toStartOf="@+id/itemCartTxtTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/itemCartTxtTitle" />
+
+            <TextView
+                    android:id="@+id/itemCartTxtQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/itemCartTxtPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/itemCartTxtPrice" />
+
+            <Button
+                    android:id="@+id/itemCartBtnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

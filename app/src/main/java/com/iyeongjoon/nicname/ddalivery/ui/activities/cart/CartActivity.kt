@@ -14,6 +14,7 @@ import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.cart.CartAdapter
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.cart.CartAdapterViewModel
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.home.HomeAdapter
 import com.iyeongjoon.nicname.ddalivery.ui.adapters.recycler.home.HomeAdapterViewModel
+import com.iyeongjoon.nicname.domain.domain.db.entity.cart.CartEntity
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -45,7 +46,7 @@ class CartActivity : DaggerAppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                cartAdapter = CartAdapter(CartAdapterViewModel(this,it))
+                cartAdapter = CartAdapter(CartAdapterViewModel(this, ArrayList(it),disposables,viewModel.localDatabase))
                 cartRecyclerView.apply {
                     adapter = cartAdapter
                     layoutManager = LinearLayoutManager(context)
