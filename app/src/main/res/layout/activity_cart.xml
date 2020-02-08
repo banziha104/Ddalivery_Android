@@ -11,13 +11,13 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/recyclerViewBack"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/cartBtnConfirm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-            android:id="@+id/button"
+            android:id="@+id/cartBtnConfirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Button"
