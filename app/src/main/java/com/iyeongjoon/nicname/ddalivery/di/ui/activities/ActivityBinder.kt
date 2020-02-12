@@ -5,7 +5,6 @@ import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup.SignUpActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.cart.CartActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
-import com.iyeongjoon.nicname.ddalivery.ui.activities.payment.PaymentActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.splash.SplashActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -24,9 +23,6 @@ abstract class ActivityBinder{
 
     @ContributesAndroidInjector(modules = [SplashModule::class])
     abstract fun bindSplashModule() : SplashActivity
-
-    @ContributesAndroidInjector(modules = [PaymentModule::class])
-    abstract fun bindPaymentModule() : PaymentActivity
 
     @ContributesAndroidInjector(modules = [CartModule::class])
     abstract fun bindCartModule() : CartActivity

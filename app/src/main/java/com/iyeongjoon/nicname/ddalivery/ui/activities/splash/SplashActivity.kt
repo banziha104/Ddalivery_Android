@@ -14,9 +14,7 @@ import com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signin.SignInActivity
 import com.iyeongjoon.nicname.ddalivery.ui.activities.main.MainActivity
 import com.iyeongjoon.nicname.domain.domain.db.entity.token.TokenEntity
 import dagger.android.support.DaggerAppCompatActivity
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.BiFunction
 import io.reactivex.rxkotlin.Observables
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.AnkoLogger

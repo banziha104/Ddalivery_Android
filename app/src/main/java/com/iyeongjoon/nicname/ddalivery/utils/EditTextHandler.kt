@@ -1,12 +1,9 @@
 package com.iyeongjoon.nicname.ddalivery.utils
 
 import android.app.Activity
-import android.content.Context
 import android.widget.EditText
-import androidx.fragment.app.Fragment
 import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.AutoClearedDisposableContract
-import com.iyeongjoon.nicname.core.rx.activity.AutoClearedDisposable
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
 import com.jakewharton.rxbinding3.view.focusChanges
@@ -14,7 +11,6 @@ import com.jakewharton.rxbinding3.widget.textChanges
 import com.wajahatkarim3.easyvalidation.core.rules.BaseRule
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import io.reactivex.subjects.BehaviorSubject
-import org.jetbrains.anko.find
 
 
 class EditTextHandler(

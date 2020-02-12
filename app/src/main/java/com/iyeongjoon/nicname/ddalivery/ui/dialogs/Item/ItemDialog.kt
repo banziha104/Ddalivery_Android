@@ -4,31 +4,18 @@ import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.view.Window
-import android.widget.EditText
-import com.google.android.material.snackbar.Snackbar
 import com.iyeongjoon.nicname.core.ex.plusAssign
-import com.iyeongjoon.nicname.core.ex.runOnIoScheduler
 import com.iyeongjoon.nicname.ddalivery.GlideApp
 import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.ddalivery.ex.imageUrl
-import com.iyeongjoon.nicname.ddalivery.ex.validation.checkWithEditText
 import com.iyeongjoon.nicname.ddalivery.utils.EditTextHandler
 import com.iyeongjoon.nicname.domain.domain.db.entity.cart.CartEntity
 import com.jakewharton.rxbinding3.view.clicks
-import com.jakewharton.rxbinding3.view.focusChanges
-import com.jakewharton.rxbinding3.widget.textChanges
-import com.wajahatkarim3.easyvalidation.core.rules.BaseRule
-import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.rxkotlin.Observables
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.BehaviorSubject
 import kotlinx.android.synthetic.main.dialog_item.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
-import java.lang.NumberFormatException
 
 class ItemDialog(var viewModel: ItemDialogViewModel) : Dialog(viewModel.context), AnkoLogger {
 
