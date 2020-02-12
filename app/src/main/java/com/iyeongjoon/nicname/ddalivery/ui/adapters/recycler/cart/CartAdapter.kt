@@ -14,7 +14,6 @@ import com.iyeongjoon.nicname.ddalivery.ex.imageUrl
 import com.jakewharton.rxbinding3.view.clicks
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 import org.jetbrains.anko.runOnUiThread
 
 
