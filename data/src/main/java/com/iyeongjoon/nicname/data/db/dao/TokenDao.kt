@@ -14,6 +14,7 @@ interface TokenDao {
 
     @Query("SELECT * FROM token_store")
     fun findAllToSingle() : Single<List<TokenEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity : TokenEntity)
 
