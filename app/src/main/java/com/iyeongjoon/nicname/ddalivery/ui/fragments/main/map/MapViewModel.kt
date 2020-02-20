@@ -10,4 +10,6 @@ class MapViewModel(
     val dataDriver: DataDriver,
     val sellerApi: SellerApi
 ) : ViewModel() {
+    val locationObserver = locationEvent.getLocationObserver()
+    val getSeller = sellerApi.seller()
 }

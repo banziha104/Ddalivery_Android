@@ -52,8 +52,7 @@ class HomeFragment : DaggerFragment(), AnkoLogger {
     private fun bind() {
 
         viewDisposables += viewModel
-            .locationEvent
-            .getLocationObserver()
+            .locationObserver
             .subscribe({ location ->
                 viewDisposables += viewModel
                     .productObserver(location)

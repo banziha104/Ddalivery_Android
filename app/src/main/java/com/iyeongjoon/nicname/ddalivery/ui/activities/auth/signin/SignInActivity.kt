@@ -57,17 +57,14 @@ class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
             .clicks()
             .subscribe{
                 viewDisposables += viewModel
-                    .authApi
-                    .auth()
+                    .auth
                     .login(LoginForm(signInEditId.text.toString(), signInEditPassword.text.toString()))
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe ({
                         info { "1" }
                         if (it.code == "OK" || it.data != null) {
                             viewDisposables += viewModel
-                                .localDatabase
-                                .tokenDao()
-                                .findAllToSingle()
+                                .singleTokenStore
                                 .subscribeOn(Schedulers.computation())
                                 .observeOn(Schedulers.computation())
                                 .subscribe({ db ->

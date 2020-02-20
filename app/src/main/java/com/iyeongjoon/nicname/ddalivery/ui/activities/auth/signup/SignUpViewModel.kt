@@ -2,6 +2,7 @@ package com.iyeongjoon.nicname.ddalivery.ui.activities.auth.signup
 
 import androidx.lifecycle.ViewModel
 import com.iyeongjoon.nicname.data.api.auth.AuthApi
+import com.iyeongjoon.nicname.data.api.auth.AuthApiContract
 import com.iyeongjoon.nicname.ddalivery.R
 import com.wajahatkarim3.easyvalidation.core.rules.*
 import io.reactivex.subjects.BehaviorSubject
@@ -12,6 +13,7 @@ class SignUpViewModel(val authApi: AuthApi) : ViewModel(),AnkoLogger{
 
     var zipCode : String? = null
 
+    val auth : AuthApiContract = authApi.auth()
     /***
      * first : EditText
      * second : 각 뷰에 해당하는 유효성 검증 룰

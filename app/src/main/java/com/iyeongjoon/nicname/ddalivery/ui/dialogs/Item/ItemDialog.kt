@@ -63,11 +63,12 @@ class ItemDialog(var viewModel: ItemDialogViewModel) : Dialog(viewModel.context)
             vm.disposable += itemDialogBtnSubmit.clicks()
                 .observeOn(Schedulers.computation())
                 .subscribe({
-                    vm.localDatabase.cartDao().findAllToSingle()
+                    vm
+                        .singleCart
                         .subscribe({
                             vm.product.apply {
                                 val sameProductList = it.filter { it.productId == productId }
-                                if (sameProductList.isNotEmpty()){
+                                if (sameProductList.isNotEmpty()) {
                                     info { "not empty" }
                                     vm.localDatabase.cartDao().update(
                                         CartEntity(
@@ -78,27 +79,30 @@ class ItemDialog(var viewModel: ItemDialogViewModel) : Dialog(viewModel.context)
                                             price,
                                             productId,
                                             productName,
-                                            sameProductList[0].quantity + itemDialogEdit.text.toString().toInt())
+                                            sameProductList[0].quantity + itemDialogEdit.text.toString().toInt()
+                                        )
                                     )
-                                }else{
+                                } else {
                                     info { "empty" }
                                     vm.localDatabase.cartDao().insert(
-                                        CartEntity(null,
+                                        CartEntity(
+                                            null,
                                             category.categoryName,
                                             description,
                                             image,
                                             price,
                                             productId,
                                             productName,
-                                            itemDialogEdit.text.toString().toInt())
+                                            itemDialogEdit.text.toString().toInt()
+                                        )
                                     )
                                 }
                             }
-                            vm.context.runOnUiThread{
+                            vm.context.runOnUiThread {
                                 viewModel.context.toast("카트에 ${viewModel.product.productName}이 ${itemDialogEdit.text.toString().toInt()}개 담겼습니다")
                                 dismiss()
                             }
-                        },{
+                        }, {
 
                         })
 

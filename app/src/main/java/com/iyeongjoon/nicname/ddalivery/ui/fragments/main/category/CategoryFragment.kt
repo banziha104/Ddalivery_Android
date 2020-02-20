@@ -47,9 +47,7 @@ class CategoryFragment : DaggerFragment() {
 
     private fun bind() {
         viewDisposables += viewModel
-            .categoryApi
-            .category()
-            .findAll()
+            .findAllCategory
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {showProgressBar()}
