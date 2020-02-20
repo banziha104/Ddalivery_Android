@@ -58,8 +58,7 @@ class MapFragment : DaggerFragment(), AnkoLogger, OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap?) {
         map = googleMap
         viewDisposables += viewModel
-            .locationEvent
-            .getLocationObserver()
+            .locationObserver
             .subscribe({ location ->
                 map?.moveCamera(
                     CameraUpdateFactory.newLatLngZoom(
@@ -70,8 +69,7 @@ class MapFragment : DaggerFragment(), AnkoLogger, OnMapReadyCallback {
                     )
                 )
                 viewDisposables += viewModel
-                    .sellerApi
-                    .seller()
+                    .getSeller
                     .findByDistance(location.latitude,location.longitude, KILO_METER)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

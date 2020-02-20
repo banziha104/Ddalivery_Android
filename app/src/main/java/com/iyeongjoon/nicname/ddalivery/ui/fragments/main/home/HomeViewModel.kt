@@ -24,6 +24,7 @@ class HomeViewModel(val productApi: ProductApi,
     private var page: Int = -1
         get() = field++
 
+    val locationObserver : Observable<Location>  =  locationEvent.getLocationObserver()
 
     var productModel: Product? = null
         set(value) {

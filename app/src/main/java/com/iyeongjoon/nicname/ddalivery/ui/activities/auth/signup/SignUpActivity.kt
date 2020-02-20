@@ -25,13 +25,8 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
     @Inject
     lateinit var viewModelFactory: SignUpViewModelFactory
     lateinit var viewModel: SignUpViewModel
-    val disposable =
-        AutoClearedDisposable(this)
-    val viewDisposables =
-        AutoClearedDisposable(
-            lifecycleOwner = this,
-            alwaysClearOnStop = false
-        )
+    val disposable = AutoClearedDisposable(this)
+    val viewDisposables = AutoClearedDisposable(lifecycleOwner = this, alwaysClearOnStop = false)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,8 +72,7 @@ class SignUpActivity : DaggerAppCompatActivity(), AnkoLogger {
                 }
 
                 disposable += viewModel
-                    .authApi
-                    .auth()
+                    .auth
                     .signUp(
                         SignUpForm(
                             signUpEditId.text.toString(),

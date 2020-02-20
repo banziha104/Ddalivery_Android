@@ -21,4 +21,5 @@ class ItemDialogViewModel(
     val height = (context.displayMetrics.heightPixels * 0.8).toInt()
     val checker = BehaviorSubject.createDefault<MutableMap<Int, Boolean>>(mutableMapOf(R.id.itemDialogEdit to false))
     val rules  = arrayOf(NonEmptyRule(),ValidNumberRule())
+    val singleCart = localDatabase.cartDao().findAllToSingle()
 }
