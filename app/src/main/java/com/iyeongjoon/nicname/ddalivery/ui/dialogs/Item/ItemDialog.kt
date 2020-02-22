@@ -63,8 +63,7 @@ class ItemDialog(var viewModel: ItemDialogViewModel) : Dialog(viewModel.context)
             vm.disposable += itemDialogBtnSubmit.clicks()
                 .observeOn(Schedulers.computation())
                 .subscribe({
-                    vm
-                        .singleCart
+                    vm.singleCart
                         .subscribe({
                             vm.product.apply {
                                 val sameProductList = it.filter { it.productId == productId }

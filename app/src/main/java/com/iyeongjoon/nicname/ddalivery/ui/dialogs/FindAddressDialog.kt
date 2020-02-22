@@ -25,8 +25,10 @@ import org.jetbrains.anko.AnkoLogger
  * @property viewDisposables AutoClearedDisposable
  * @constructor
  */
-class FindAddressDialog(val activity: AppCompatActivity, val setTxtAddress : (Array<String?>) -> Unit) : Dialog(activity), View.OnClickListener,
-    AnkoLogger {
+class FindAddressDialog(
+    val activity: AppCompatActivity,
+    val setTxtAddress: (Array<String?>) -> Unit
+) : Dialog(activity), View.OnClickListener, AnkoLogger {
 
     val driver = PublishSubject.create<Array<String?>>()
 

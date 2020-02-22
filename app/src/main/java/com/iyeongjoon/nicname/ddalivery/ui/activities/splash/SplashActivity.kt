@@ -39,11 +39,8 @@ class SplashActivity : DaggerAppCompatActivity(), AnkoLogger, PermissionControll
 
     private fun bind() {
         startLocationService()
-        viewDisposables += Observables.zip(
-            viewModel.localDatabase.tokenDao().findAll(),
-            viewModel.locationEvent.getLocationObserver()
-        ) { t1, t2 -> SplashDataType(t1, t2) }
-            .subscribeOn(Schedulers.computation())
+
+        viewDisposables += viewModel.getLocalData
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 it.run {

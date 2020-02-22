@@ -27,8 +27,7 @@ import javax.inject.Inject
  */
 class SignInActivity : DaggerAppCompatActivity(), AnkoLogger {
 
-    @Inject
-    lateinit var viewModelFactory: SignInViewModelFactory
+    @Inject lateinit var viewModelFactory: SignInViewModelFactory
     private lateinit var viewModel: SignInViewModel
     private val disposable = AutoClearedDisposable(this)
     private val viewDisposables =
