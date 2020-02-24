@@ -86,13 +86,11 @@ class CartActivity : DaggerAppCompatActivity() , AnkoLogger{
                                         location.longitude,
                                         cart.map { OrderForm.from(it) })
                                 ).subscribe {
-                                    info { "주문 생성" }
-                                    info { it }
+                                    viewModel.saveOrderGroup(it.data!!)
                                 }
                             }else{
                                 runOnUiThread { toast("카트정보가 없습니다").show() }
                             }
-
                         }, {
                             it.printStackTrace()
                         })

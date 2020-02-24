@@ -9,6 +9,7 @@ import com.iyeongjoon.nicname.core.ex.plusAssign
 import com.iyeongjoon.nicname.core.rx.fragment.AutoClearedDisposable
 import com.iyeongjoon.nicname.ddalivery.R
 import dagger.android.support.DaggerFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject
 
 class UserFragment : DaggerFragment() {
@@ -32,7 +33,19 @@ class UserFragment : DaggerFragment() {
         lifecycle += disposables
         lifecycle += viewDisposables
         viewModel = ViewModelProviders.of(this, viewModelFactory)[UserViewModel::class.java]
-
+        bind()
     }
 
+    fun bind(){
+        viewModel
+            .localDatabase
+            .orderDao()
+            .findAllToSingle()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                //TODO : UserFragment List 만들기
+            },{
+                it.printStackTrace()
+            })
+    }
 }
