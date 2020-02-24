@@ -19,7 +19,7 @@ interface OrderApiContract{
     @POST("order")
     fun createOrder(
         @Body orderGroupForm: OrderGroupForm
-    ) : Observable<ApiResponse<*>>
+    ) : Observable<ApiResponse<Int>>
 
 
 }

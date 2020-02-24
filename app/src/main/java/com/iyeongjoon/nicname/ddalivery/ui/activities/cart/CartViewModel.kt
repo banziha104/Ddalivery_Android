@@ -7,6 +7,7 @@ import com.iyeongjoon.nicname.data.form.order.OrderForm
 import com.iyeongjoon.nicname.data.form.order.OrderGroupForm
 import com.iyeongjoon.nicname.ddalivery.db.LocalDatabase
 import com.iyeongjoon.nicname.domain.domain.db.entity.cart.CartEntity
+import com.iyeongjoon.nicname.domain.domain.db.entity.order.OrderEntity
 import com.iyeongjoon.nicname.domain.domain.db.entity.token.TokenEntity
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -33,4 +34,6 @@ class CartViewModel(val localDatabase: LocalDatabase,
         .createOrder(orderGroupForm)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
+
+    fun saveOrderGroup(orderGroupId : Int) = localDatabase.orderDao().insert(OrderEntity(null,orderGroupId))
 }
