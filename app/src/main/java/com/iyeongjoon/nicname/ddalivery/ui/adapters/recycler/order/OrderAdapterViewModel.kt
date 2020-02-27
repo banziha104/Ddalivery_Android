@@ -9,6 +9,7 @@ import com.iyeongjoon.nicname.ddalivery.R
 import com.iyeongjoon.nicname.domain.domain.api.entity.order.OrderGroup
 
 
+// 깃충돌 관리
 class OrderAdapterViewModel (val context : Context,
                              val orderGroup : OrderGroup){
     val itemSize : Int
